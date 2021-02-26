@@ -45,7 +45,7 @@ export default function() {
       title: "Integration",
       htmlBefore: '<i class="material-icons">wb_shade</i>',
       htmlAfter: '<i class="material-icons" style="margin-left:10px; font-size: 10px">stop_circle</i>',
-      to: "/errors",
+      to: "/integration",
     },
     {
       title: "Verification",

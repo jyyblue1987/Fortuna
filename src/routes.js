@@ -13,6 +13,7 @@ import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
 import Dashboard from "./views/Dashboard";
+import Integration from "./views/Integration";
 
 export default [
   {
@@ -60,5 +61,10 @@ export default [
     path: "/dashboard",
     layout: DefaultLayout,
     component: Dashboard
+  },
+  {
+    path: "/integration",
+    layout: DefaultLayout,
+    component: Integration
   },
 ];
