@@ -56,7 +56,7 @@ const Dashboard = () => (
                   <td>Review</td>
                 </tr>
                 <tr>
-                  <td>1</td>
+                  <td>2</td>
                   <td>2 Feb, 2020</td>
                   <td>Kerry</td>
                   <td>smartsoft1987@gmail.com</td>
@@ -65,7 +65,7 @@ const Dashboard = () => (
                   <td>Unreviewed</td>
                 </tr>
                 <tr>
-                  <td>1</td>
+                  <td>3</td>
                   <td>2 Feb, 2020</td>
                   <td>Kerry</td>
                   <td>jyyblue1987@outlook.com</td>
@@ -74,7 +74,7 @@ const Dashboard = () => (
                   <td>Unreviewed</td>
                 </tr>
                 <tr>
-                  <td>1</td>
+                  <td>4</td>
                   <td>2 Feb, 2020</td>
                   <td>Kerry</td>
                   <td>jyyblue1987@outlook.com</td>

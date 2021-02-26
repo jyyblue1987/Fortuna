@@ -14,6 +14,7 @@ import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
 import Dashboard from "./views/Dashboard";
 import Integration from "./views/Integration";
+import Verification from "./views/Verification";
 
 export default [
   {
@@ -66,5 +67,10 @@ export default [
     path: "/integration",
     layout: DefaultLayout,
     component: Integration
+  },
+  {
+    path: "/verification",
+    layout: DefaultLayout,
+    component: Verification
   },
 ];

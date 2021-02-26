@@ -50,7 +50,7 @@ export default function() {
     {
       title: "Verification",
       htmlBefore: '<i class="material-icons">domain_verification</i>',
-      to: "/errors",
+      to: "/verification",
     }
   ];
 }
