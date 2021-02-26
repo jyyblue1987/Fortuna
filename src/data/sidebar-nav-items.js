@@ -35,6 +35,22 @@ export default function() {
       title: "Errors",
       htmlBefore: '<i class="material-icons">error</i>',
       to: "/errors",
+    },
+    {
+      title: "Dashboard",
+      htmlBefore: '<i class="material-icons">network_check</i>',
+      to: "/dashboard",
+    },
+    {
+      title: "Integration",
+      htmlBefore: '<i class="material-icons">wb_shade</i>',
+      htmlAfter: '<i class="material-icons" style="margin-left:10px; font-size: 10px">stop_circle</i>',
+      to: "/errors",
+    },
+    {
+      title: "Verification",
+      htmlBefore: '<i class="material-icons">domain_verification</i>',
+      to: "/errors",
     }
   ];
 }
