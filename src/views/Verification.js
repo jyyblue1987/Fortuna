@@ -1,16 +1,16 @@
 import React, {useState} from "react";
-import { Container, Button, Modal, ModalBody, Nav, NavItem, NavLink } from "shards-react";
+import { Container, Button, Modal, ModalBody, Nav, NavItem, NavLink, FormInput } from "shards-react";
 
 function Step1(props) {
   return (
     <div>
-      <div style={{textAlign: 'center'}}>
+      <div style={{textAlign: 'center', height: 300}}>
         <i className="material-icons" style={{fontSize: 80, color: '#f00'}}>info</i>
         <h5>Please continue on mobile</h5>
         <p>To avoid problems with the quanlity of your <br/>verification, please continue on mobile</p>
       </div>
-      <div style={{textAlign: 'right'}}>
-        <Button style={{width: 100}} onClick={props.nextStep}>Continue</Button>
+      <div style={{textAlign: 'right'}}>        
+        <Button style={{width: 100}} onClick={props.nextStep}>Continue</Button>        
       </div>
     </div>
   )
@@ -19,7 +19,11 @@ function Step1(props) {
 function QRCodeComponent(props) {
   return (
     <div>
-      QR Code
+      <p>Please scan the QR code below with your mobile<br/>device to continue your verificatio.</p>
+      <img 
+        style={{width: 100}}
+        src="https://boofcv.org/images/thumb/3/35/Example_rendered_qrcode.png/400px-Example_rendered_qrcode.png"
+        />
     </div>
   )
 } 
@@ -27,7 +31,13 @@ function QRCodeComponent(props) {
 function EmailComponent(props) {
   return (
     <div>
-      Email
+      <p>Please enter your email address, You'll receive an<br/>email with a link to continue your verification.</p>
+      <FormInput
+        id="feEmailAddress"
+        type="email"
+        placeholder="Email"
+        style={{width: 300, margin: 'auto'}}
+      />     
     </div>
   )
 } 
@@ -35,7 +45,13 @@ function EmailComponent(props) {
 function SMSComponent(props) {
   return (
     <div>
-      SMS
+      <p>Please enter your phone number, You'll receive a<br/>SMS to continue your verification.</p>
+      <FormInput
+        id="fePhoneNumber"
+        type="phone"
+        placeholder="Phone Number"
+        style={{width: 300, margin: 'auto'}}
+      />     
     </div>
   )
 } 
@@ -56,7 +72,7 @@ function Step2(props) {
 
   return (
     <div>
-      <div style={{textAlign: 'center'}}>        
+      <div style={{textAlign: 'center', height: 300}}>
         <h5>Choose your method to continue on <br/>mobile</h5>
         <div>
           <Nav justified>
@@ -84,8 +100,13 @@ function Step2(props) {
             }
           </div>
         </div>
+
  
-      </div>      
+      </div>   
+      
+      <div style={{textAlign: 'right'}}>
+          <Button style={{width: 100}} onClick={props.nextStep}>Continue</Button>
+        </div>   
     </div>
   )
 }
@@ -97,6 +118,11 @@ export default function Verification(props) {
   const [step, setStep] = useState(1);
 
   const nextStep1 = () => {
+    console.log('nextStep1');
+    setStep(2);
+  }
+
+  const nextStep2 = () => {
     console.log('nextStep1');
     setStep(2);
   }
@@ -113,12 +139,12 @@ export default function Verification(props) {
         </div>
       </Container>
       <Modal open={show} toggle={handleClose}>        
-        <ModalBody>
+        <ModalBody style={{height: 400}}>
           { step == 1 &&
             <Step1 nextStep={nextStep1}/>
           }
           { step == 2 &&
-            <Step2/>
+            <Step2  nextStep={nextStep2}/>
           }
         </ModalBody>
       </Modal>
