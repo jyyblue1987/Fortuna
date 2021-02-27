@@ -17,12 +17,14 @@ function Step1(props) {
 }
 
 function QRCodeComponent(props) {
+  const url = window.location.href;
+  const qr_url = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+url;
   return (
     <div>
       <p>Please scan the QR code below with your mobile<br/>device to continue your verificatio.</p>
       <img 
         style={{width: 100}}
-        src="https://boofcv.org/images/thumb/3/35/Example_rendered_qrcode.png/400px-Example_rendered_qrcode.png"
+        src={qr_url}
         />
     </div>
   )

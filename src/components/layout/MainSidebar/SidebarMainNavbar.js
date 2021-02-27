@@ -19,6 +19,9 @@ class SidebarMainNavbar extends React.Component {
 
   render() {
     const { hideLogoText } = this.props;
+    const url = window.location.href;
+    const index = url.lastIndexOf('/');
+    const logo_name = url.substring(index + 1);
     return (
       <div className="main-navbar">
         <Navbar
@@ -30,14 +33,20 @@ class SidebarMainNavbar extends React.Component {
             href="#"
             style={{ lineHeight: "25px" }}
           >
-            <div className="d-table">
+            <div className="d-table m-auto">
               <img
                 id="main-logo"
                 className="d-inline-block align-top mr-1"
-                style={{ maxWidth: "140px" }}
-                src={require("../../../images/logo_navbar.png")}
+                style={{ maxWidth: "30px" }}
+                src={require("../../../images/fortuna_logo.png")}
+                
                 alt="Shards Dashboard"
-              />              
+              />
+              {!hideLogoText && (
+                <span className="d-none d-md-inline ml-1">
+                  {logo_name}
+                </span>
+              )}
             </div>
           </NavbarBrand>
           {/* eslint-disable-next-line */}
