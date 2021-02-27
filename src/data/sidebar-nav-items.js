@@ -1,5 +1,6 @@
 export default function() {
   return [
+    /*
     {
       title: "Blog Dashboard",
       to: "/blog-overview",
@@ -36,6 +37,7 @@ export default function() {
       htmlBefore: '<i class="material-icons">error</i>',
       to: "/errors",
     },
+    */
     {
       title: "Dashboard",
       htmlBefore: '<i class="material-icons">network_check</i>',
