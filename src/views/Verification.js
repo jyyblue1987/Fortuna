@@ -111,6 +111,22 @@ function Step2(props) {
   )
 }
 
+function CancelStep(props) {
+  return (
+    <div>
+      <div style={{textAlign: 'center', height: 300}}>
+        <i className="material-icons" style={{fontSize: 80, color: '#f00'}}>info</i>
+        <h5>Cancel verification?</h5>
+        <p>This may impact your ablitiy to access the service<br/>Are you sure you want to do that?</p>
+      </div>
+      <div style={{textAlign: 'right'}}>        
+        <Button theme="light" style={{width: 100, float: 'left'}} outline  onClick={props.backStep}>No, Go Back</Button>        
+        <Button  style={{width: 100}}  onClick={props.nextStep}>Yes, Confirm</Button>        
+      </div>
+    </div>
+  )
+}
+
 export default function Verification(props) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -123,7 +139,22 @@ export default function Verification(props) {
   }
 
   const nextStep2 = () => {
-    console.log('nextStep1');
+    setStep(3);
+    handleClose();
+  }
+
+  const nextStep3 = () => {    
+    setStep(3);
+    handleClose();
+  }
+
+
+  const cancelStep = () => {    
+    setStep(3);
+  }
+
+  const backStep = () => {
+    
     setStep(2);
   }
   
@@ -138,7 +169,8 @@ export default function Verification(props) {
           </div>
         </div>
       </Container>
-      <Modal open={show} toggle={handleClose}>        
+      <Modal open={show} toggle={handleClose}
+        >        
         <ModalBody style={{height: 400}}>
           { step == 1 &&
             <Step1 nextStep={nextStep1}/>
@@ -146,6 +178,22 @@ export default function Verification(props) {
           { step == 2 &&
             <Step2  nextStep={nextStep2}/>
           }
+          { step == 3 &&
+            <CancelStep  backStep={backStep} nextStep={nextStep3}/>
+          }
+          {
+            step == 2 &&
+            <span style={{position: 'absolute', top: 0, right: 0}} onClick={cancelStep}>
+              <i className="material-icons" style={{color: 'gray', cursor: 'pointer', marginRight: 15, marginTop: 15}}>highlight_off</i>
+            </span>
+          }
+          {
+            step == 3 &&
+            <span style={{position: 'absolute', top: 0, left: 0}} onClick={backStep}>
+              <i className="material-icons" style={{color: 'gray', cursor: 'pointer', marginLeft: 15, marginTop: 15}}>highlight_off</i>
+            </span>
+          }
+
         </ModalBody>
       </Modal>
     </div>
